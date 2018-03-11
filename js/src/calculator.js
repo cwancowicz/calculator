@@ -3,22 +3,26 @@ $(document).ready(function() {
     addButtonListeners(equation);
 });
 
-function addButtonListeners(equation) {
-    $("#1").on("click", function() {buildNumber(1, equation)});
-    $("#2").on("click", function() {buildNumber(2, equation)});
-    $("#3").on("click", function() {buildNumber(3, equation)});
-    $("#4").on("click", function() {buildNumber(4, equation)});
-    $("#5").on("click", function() {buildNumber(5, equation)});
-    $("#6").on("click", function() {buildNumber(6, equation)});
-    $("#7").on("click", function() {buildNumber(7, equation)});
-    $("#8").on("click", function() {buildNumber(8, equation)});
-    $("#9").on("click", function() {buildNumber(9, equation)});
-    $("#0").on("click", function() {buildNumber(0, equation)});
+function addButtonListeners(eq) {
+    $("#1").on("click", function() {buildNumber(1, eq)});
+    $("#2").on("click", function() {buildNumber(2, eq)});
+    $("#3").on("click", function() {buildNumber(3, eq)});
+    $("#4").on("click", function() {buildNumber(4, eq)});
+    $("#5").on("click", function() {buildNumber(5, eq)});
+    $("#6").on("click", function() {buildNumber(6, eq)});
+    $("#7").on("click", function() {buildNumber(7, eq)});
+    $("#8").on("click", function() {buildNumber(8, eq)});
+    $("#9").on("click", function() {buildNumber(9, eq)});
+    $("#0").on("click", function() {buildNumber(0, eq)});
 
-    $("#plus").on("click", function() {buildOperand("+", equation)});
-    $("#minus").on("click", function() {buildOperand("-", equation)});
+    $("#plus").on("click", function() {buildOperand("+", eq)});
+    $("#minus").on("click", function() {buildOperand("-", eq)});
+    $("#multiply").on("click", function() {buildOperand("*", eq)});
+    $("#divide").on("click", function() {buildOperand("/", eq)});
 
-    $("#equalsButton").click(function() {evaluate(equation)});
+    $("#clear").on("click", function() {buildClearButton(eq)});
+
+    $("#equalsButton").click(function() {evaluate(eq)});
 }
 
 function buildNumber(num, eq) {
@@ -32,6 +36,10 @@ function buildOperand(op, eq) {
     } else {
         // don't add or throw error
     }
+}
+
+function buildClearButton(eq) {
+    eq.splice(0, eq.length);
 }
 
 function isValidOperandOrder(op, eq) {
@@ -58,6 +66,8 @@ function operandNotANumber(num) {
     switch(num) {
         case "+":
         case "-":
+        case "*":
+        case "/":
             return true;
         default:
             return false;
@@ -108,6 +118,10 @@ function performOperand(firstNum, op, secNum) {
             return parseFloat(firstNum) + parseFloat(secNum);
         case "-":
             return parseFloat(firstNum) - parseFloat(secNum);
+        case "*":
+            return parseFloat(firstNum) * parseFloat(secNum);
+        case "/":
+            return parseFloat(firstNum) / parseFloat(secNum);
         default:
             return "";
     }

@@ -14,6 +14,9 @@ describe('calculator functions', function() {
 
     var plusId = element(by.id('plus'));
     var minusId = element(by.id('minus'));
+    var multiplyId = element(by.id('multiply'));
+    var divideId = element(by.id('divide'));
+    var clearId = element(by.id('clear'));
 
     var value = element(by.id('value'));
 
@@ -87,5 +90,52 @@ describe('calculator functions', function() {
        fiveId.click();
        equalId.click();
        expect(value.getText()).toEqual("-3");
+    });
+
+    // multiplication
+    it('should multiply two numbers', function () {
+       threeId.click();
+       multiplyId.click();
+       fourId.click();
+       equalId.click();
+       expect(value.getText()).toEqual("12");
+    });
+
+    // division
+    it('should divide two numbers', function() {
+        eightId.click();
+        divideId.click();
+        fourId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("2");
+    });
+
+    // other
+    it('should add, subtract, divide and multiply', function() {
+        eightId.click();
+        divideId.click();
+        fourId.click();
+        multiplyId.click();
+        threeId.click();
+        plusId.click();
+        fiveId.click();
+        minusId.click();
+        sixId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("5");
+    });
+
+    // clear
+    it('should clear prior calculations and start new', function() {
+       zeroId.click();
+       plusId.click();
+       threeId.click();
+       minusId.click();
+       clearId.click();
+       twoId.click();
+       plusId.click();
+       nineId.click();
+       equalId.click();
+       expect(value.getText()).toEqual("11");
     });
 });
