@@ -17,6 +17,7 @@ describe('calculator functions', function() {
     var multiplyId = element(by.id('multiply'));
     var divideId = element(by.id('divide'));
     var clearId = element(by.id('clear'));
+    var pointId = element(by.id('point'));
 
     var value = element(by.id('value'));
 
@@ -138,4 +139,54 @@ describe('calculator functions', function() {
        equalId.click();
        expect(value.getText()).toEqual("11");
     });
+
+    // decimal
+    it('should add two decimal numbers', function() {
+        threeId.click();
+        pointId.click();
+        oneId.click();
+        plusId.click();
+        twoId.click();
+        pointId.click();
+        fiveId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("5.6");
+    });
+
+    // error checking
+    it('should overwrite operand if consecutively pressed', function() {
+        oneId.click();
+        plusId.click();
+        multiplyId.click();
+        nineId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("9");
+    });
+
+    it('should not evaluate if last input was not a number', function() {
+        threeId.click();
+        plusId.click();
+        fourId.click();
+        multiplyId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("0");
+    });
+
+    it('should not allow to press operand when only single decimal', function() {
+        pointId.click();
+        plusId.click();
+        twoId.click();
+        equalId.click();
+        expect(value.getText(".2"));
+    });
+
+    it('should not allow two or more decimals in number', function() {
+        twoId.click();
+        pointId.click();
+        threeId.click();
+        pointId.click();
+        fourId.click();
+        expect(value.getText()).toEqual("2.34");
+    });
+
 });

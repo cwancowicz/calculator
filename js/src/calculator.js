@@ -14,12 +14,13 @@ function addButtonListeners(eq) {
     $("#8").on("click", function() {buildNumber(8, eq)});
     $("#9").on("click", function() {buildNumber(9, eq)});
     $("#0").on("click", function() {buildNumber(0, eq)});
+    $("#point").on("click", function() {buildNumber(".", eq)});
 
     $("#plus").on("click", function() {buildOperand("+", eq)});
     $("#minus").on("click", function() {buildOperand("-", eq)});
     $("#multiply").on("click", function() {buildOperand("*", eq)});
-    $("#divide").on("click", function() {buildOperand("/", eq)});
 
+    $("#divide").on("click", function() {buildOperand("/", eq)});
     $("#clear").on("click", function() {buildClearButton(eq)});
 
     $("#equalsButton").click(function() {evaluate(eq)});
@@ -34,7 +35,8 @@ function buildOperand(op, eq) {
     if (isValidOperandOrder(op, eq)) {
         eq.push(op);
     } else {
-        // don't add or throw error
+        // overwrite current op
+        eq[eq.length-1] = op;
     }
 }
 
@@ -43,14 +45,14 @@ function buildClearButton(eq) {
 }
 
 function isValidOperandOrder(op, eq) {
-    return true;
+    return lastOperandWasANumber(eq);
 }
 
 function getLastNumber(equation, curNum) {
 
     if (equation.length == 0 || lastOperandWasNotANumber(equation)) {
         equation.push("");
-    }
+    } else if (equation[equation.length-1].contains)
     return equation[equation.length-1];
 }
 
@@ -79,6 +81,10 @@ function operandIsANumber(num) {
 }
 
 function evaluate(eq) {
+    if (lastOperandWasNotANumber(eq)) {
+        return;
+    }
+
     var value = 0;
     if (eq.length == 1 && operandIsANumber(eq[0])) {
         value = eq[0];
