@@ -27,8 +27,10 @@ function addButtonListeners(eq) {
 }
 
 function buildNumber(num, eq) {
-    var existingNumber = getLastNumber(eq, num) + num;
-    eq[eq.length-1] = existingNumber;
+    var existingNumber = getLastNumber(eq, num);
+    if (num != "." || !existingNumber.includes(".")) {
+        eq[eq.length-1] = existingNumber + num;
+    }
 }
 
 function buildOperand(op, eq) {
@@ -52,7 +54,7 @@ function getLastNumber(equation, curNum) {
 
     if (equation.length == 0 || lastOperandWasNotANumber(equation)) {
         equation.push("");
-    } else if (equation[equation.length-1].contains)
+    }
     return equation[equation.length-1];
 }
 

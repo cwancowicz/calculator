@@ -186,6 +186,7 @@ describe('calculator functions', function() {
         threeId.click();
         pointId.click();
         fourId.click();
+        equalId.click();
         expect(value.getText()).toEqual("2.34");
     });
 
