@@ -4,24 +4,24 @@ $(document).ready(function() {
 });
 
 function addButtonListeners(eq) {
-    $("#1").on("click", function() {buildNumber(1, eq)});
-    $("#2").on("click", function() {buildNumber(2, eq)});
-    $("#3").on("click", function() {buildNumber(3, eq)});
-    $("#4").on("click", function() {buildNumber(4, eq)});
-    $("#5").on("click", function() {buildNumber(5, eq)});
-    $("#6").on("click", function() {buildNumber(6, eq)});
-    $("#7").on("click", function() {buildNumber(7, eq)});
-    $("#8").on("click", function() {buildNumber(8, eq)});
-    $("#9").on("click", function() {buildNumber(9, eq)});
-    $("#0").on("click", function() {buildNumber(0, eq)});
-    $("#point").on("click", function() {buildNumber(".", eq)});
+    $("#1").click(function() {buildNumber(1, eq)});
+    $("#2").click(function() {buildNumber(2, eq)});
+    $("#3").click(function() {buildNumber(3, eq)});
+    $("#4").click(function() {buildNumber(4, eq)});
+    $("#5").click(function() {buildNumber(5, eq)});
+    $("#6").click(function() {buildNumber(6, eq)});
+    $("#7").click(function() {buildNumber(7, eq)});
+    $("#8").click(function() {buildNumber(8, eq)});
+    $("#9").click(function() {buildNumber(9, eq)});
+    $("#0").click(function() {buildNumber(0, eq)});
+    $("#point").click(function() {buildNumber(".", eq)});
 
-    $("#plus").on("click", function() {buildOperand("+", eq)});
-    $("#minus").on("click", function() {buildOperand("-", eq)});
-    $("#multiply").on("click", function() {buildOperand("*", eq)});
+    $("#plus").click(function() {buildOperand("+", eq)});
+    $("#minus").click(function() {buildOperand("-", eq)});
+    $("#multiply").click(function() {buildOperand("*", eq)});
 
-    $("#divide").on("click", function() {buildOperand("/", eq)});
-    $("#clear").on("click", function() {buildClearButton(eq)});
+    $("#divide").click(function() {buildOperand("/", eq)});
+    $("#clear").click(function() {buildClearButton(eq)});
 
     $("#equalsButton").click(function() {evaluate(eq)});
 }
