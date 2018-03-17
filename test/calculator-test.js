@@ -214,7 +214,15 @@ describe('calculator functions', function() {
         minusId.click();
         sixId.click();
         clearId.click();
-        expect(equation.getText()).toEqual("");
-    })
+        expect(equation.getText()).toEqual("0");
+    });
 
+    it('should clear value html when clear button is pressed', function () {
+        threeId.click();
+        minusId.click();
+        sixId.click();
+        equalId.click();
+        clearId.click();
+        expect(value.getText()).toEqual("0");
+    })
 });

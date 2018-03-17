@@ -69,7 +69,7 @@ function addClasses() {
     var buttonDivs = ["#div1", "#div2", "#div3", "#div4", "#div5",
         "#div6", "#div7", "#div8", "#div9",
         "#div0", "#divP", "#divC", "#divAdd", "#divSub", "#divMult", "#divDivide"];
-    addClassToElement(buttonDivs, "col-sm-1");
+    addClassToElement(buttonDivs, "col-sm-3 button-padding");
 }
 
 function addClassToElement(elements, className) {
@@ -98,7 +98,8 @@ function buildOperand(op, eq) {
 
 function buildClearButton(eq) {
     eq.splice(0, eq.length);
-    $("#equation").html("");
+    $("#value").html("0");
+    $("#equation").html("0");
 }
 
 function isValidOperandOrder(op, eq) {

@@ -1,15 +1,28 @@
-element {
-    --button-div: col-sm-1;
-}
-
-.calc_button {
-    padding-left: 50px;
-}
-
-.center {
+.output {
     margin: auto;
-    width: 50%;
-    border: 3px solid black;
-    padding: 10px;
+    text-align: right;
+}
+
+#value {
+    font-size: 25px;
+    font-family: "Arial Black";
+}
+
+#equation {
+    font-family: "Arial";
+}
+
+.extra-padding {
+    padding-top: 10px;
+}
+
+.button-padding {
+    padding-bottom: 5px;
+}
+
+#header {
+    text-align: center;
+    font-family: "Arial";
+    font-size: 40px;
 }
 
