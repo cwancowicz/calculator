@@ -2,36 +2,82 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+
     <script src="../js/src/calculator.js"></script>
-    <!--<link rel="stylesheet" href="css/style.css">-->
     <meta charset="UTF-8">
     <title>Awesome Calculator</title>
 </head>
-<body>
-Hello World!
-</body>
 
-
-<button id="1">1</button>
-<button id="2">2</button>
-<button id="3">3</button>
-<button id="4">4</button>
-<button id="5">5</button>
-<button id="6">6</button>
-<button id="7">7</button>
-<button id="8">8</button>
-<button id="9">9</button>
-<button id="0">0</button>
-
-<button id="plus">+</button>
-<button id="minus">-</button>
-<button id="multiply">*</button>
-<button id="divide">/</button>
-<button id="clear">a/c</button>
-<button id="point">.</button>
-
-
-<button id="equalsButton">=</button>
-
-<textarea id="value">0</textarea>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <textarea id="value" class="form-control">0</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div id="div1">
+                <button id="1">1</button>
+            </div>
+            <div id="div2">
+                <button id="2">2</button>
+            </div>
+            <div id="div3">
+                <button id="3">3</button>
+            </div>
+            <div id="divAdd">
+                <button id="plus">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="div4">
+                <button id="4">4</button>
+            </div>
+            <div id="div5">
+                <button id="5">5</button>
+            </div>
+            <div id="div6">
+                <button id="6">6</button>
+            </div>
+            <div id="divSub">
+                <button id="minus">-</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="div7">
+                <button id="7">7</button>
+            </div>
+            <div id="div8">
+                <button id="8">8</button>
+            </div>
+            <div id="div9">
+                <button id="9">9</button>
+            </div>
+            <div id="divMult">
+                <button id="multiply">*</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="div0">
+                <button id="0">0</button>
+            </div>
+            <div id="divP">
+                <button id="point">.</button>
+            </div>
+            <div id="divC">
+                <button id="clear">a/c</button>
+            </div>
+            <div id="divDivide">
+                <button id="divide">/</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <button id="equalsButton" class="btn-block">=</button>
+            </div>
+        </div>
+    </div>
+</div>
 </html>
