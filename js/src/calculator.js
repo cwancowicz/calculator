@@ -83,6 +83,7 @@ function buildNumber(num, eq) {
     if (num != "." || !existingNumber.includes(".")) {
         eq[eq.length - 1] = existingNumber + num;
     }
+    formatEquation(eq);
 }
 
 function buildOperand(op, eq) {
@@ -92,10 +93,12 @@ function buildOperand(op, eq) {
         // overwrite current op
         eq[eq.length - 1] = op;
     }
+    formatEquation(eq);
 }
 
 function buildClearButton(eq) {
     eq.splice(0, eq.length);
+    $("#equation").html("");
 }
 
 function isValidOperandOrder(op, eq) {
@@ -185,4 +188,12 @@ function performOperand(firstNum, op, secNum) {
         default:
             return "";
     }
+}
+
+function formatEquation(eq) {
+    var output = "";
+    eq.forEach(function (value) {
+        output += value + " ";
+    });
+    $("#equation").html(output);
 }

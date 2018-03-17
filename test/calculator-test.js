@@ -20,6 +20,7 @@ describe('calculator functions', function() {
     var pointId = element(by.id('point'));
 
     var value = element(by.id('value'));
+    var equation = element(by.id('equation'));
 
     beforeEach(function () {
         browser.waitForAngularEnabled(false);
@@ -189,5 +190,31 @@ describe('calculator functions', function() {
         equalId.click();
         expect(value.getText()).toEqual("2.34");
     });
+
+    it('should display numbers in textarea', function () {
+        fiveId.click();
+        expect(equation.getText()).toEqual("5");
+    });
+
+    it('should display operands in equation', function () {
+        threeId.click();
+        minusId.click();
+        expect(equation.getText()).toEqual("3 -");
+    });
+
+    it('should display full equation', function () {
+        threeId.click();
+        minusId.click();
+        sixId.click();
+        expect(equation.getText()).toEqual("3 - 6");
+    });
+
+    it('should clear equation when clear button is pressed', function () {
+        threeId.click();
+        minusId.click();
+        sixId.click();
+        clearId.click();
+        expect(equation.getText()).toEqual("");
+    })
 
 });
