@@ -87,6 +87,10 @@ function buildNumber(num, eq) {
 }
 
 function buildOperand(op, eq) {
+    if (isFirstInputAnInvalidOperand(op, eq)) {
+        return;
+    }
+
     if (isValidOperandOrder(op, eq)) {
         eq.push(op);
     } else {
@@ -104,6 +108,10 @@ function buildClearButton(eq) {
 
 function isValidOperandOrder(op, eq) {
     return lastOperandWasANumber(eq);
+}
+
+function isFirstInputAnInvalidOperand(op, eq) {
+    return op != "-" && ((lastOperandWasNotANumber(eq) && eq.length == 1) || eq.length == 0);
 }
 
 function getLastNumber(equation, curNum) {
@@ -148,6 +156,7 @@ function evaluate(eq) {
         value = eq[0];
     } else {
 
+        eq = checkAndConvertFirstNumberToNegative(eq);
         var lastNum = eq[0];
         var op = eq[1];
         var nextNum = eq[2];
@@ -174,6 +183,15 @@ function evaluate(eq) {
 
     }
     $("#value").html(value);
+}
+
+function checkAndConvertFirstNumberToNegative(eq) {
+    if (operandNotANumber(eq[0])) {
+        var num = eq[0]+eq[1];
+        eq = eq.slice(1);
+        eq[0] = num;
+    }
+    return eq;
 }
 
 function performOperand(firstNum, op, secNum) {

@@ -224,5 +224,30 @@ describe('calculator functions', function() {
         equalId.click();
         clearId.click();
         expect(value.getText()).toEqual("0");
-    })
+    });
+
+    it('should not allow equation with non negative operand as first input', function () {
+        plusId.click();
+        expect(equation.getText()).toEqual("0");
+    });
+
+    it('should not overwrite equation with non negative operand as first input', function () {
+        minusId.click();
+        plusId.click();
+        expect(equation.getText()).toEqual("-");
+    });
+
+    it('should allow negative as first operand', function () {
+        minusId.click();
+        expect(equation.getText()).toEqual("-");
+    });
+
+    it('should equate when negative is first input', function () {
+        minusId.click();
+        nineId.click();
+        plusId.click();
+        threeId.click();
+        equalId.click();
+        expect(value.getText()).toEqual("-6");
+    });
 });
