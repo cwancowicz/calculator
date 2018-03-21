@@ -5,11 +5,11 @@
 
 #value {
     font-size: 25px;
-    font-family: "Arial Black";
+    font-family: "Orbitron";
 }
 
 #equation {
-    font-family: "Arial";
+    font-family: "Orbitron";
 }
 
 .extra-padding {
@@ -22,7 +22,42 @@
 
 #header {
     text-align: center;
-    font-family: "Arial";
+    font-family: "Orbitron";
     font-size: 40px;
 }
 
+.button-cool {
+    background-color: antiquewhite;
+}
+
+.button-operand {
+    background-color: #b3d4fc;
+}
+
+.button-equal {
+    background-color: #1b8600;
+}
+
+.button-clear {
+    background-color: crimson;
+}
+
+.button-all {
+    box-shadow: 1px 1px;
+}
+
+#calculator {
+    box-shadow: 2px 2px;
+    background-color: beige;
+}
+
+#screen {
+    border-width: 5px;
+    border-color: lightgray;
+}
+
+body {
+    background-color: #999999;
+}
+
+button:focus {outline:0;}

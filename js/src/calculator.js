@@ -63,8 +63,9 @@ function addButtonListeners(eq) {
 }
 
 function addClasses() {
-    var buttons = ["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8", "#9", "#0", "#point", "#clear", "#plus", "#minus", "#multiply", "#divide"];
-    addClassToElement(buttons, "btn-block");
+    var buttons = ["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8", "#9", "#0", "#point", "#clear", "#plus", "#minus", "#multiply", "#divide", "#equalsButton"];
+    addClassToElement(buttons, "btn-block button-all");
+    addClassToElement(["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8", "#9", "#0", "#point"], "button-cool");
 
     var buttonDivs = ["#div1", "#div2", "#div3", "#div4", "#div5",
         "#div6", "#div7", "#div8", "#div9",

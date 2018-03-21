@@ -4,20 +4,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/calculator.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
     <script src="../js/src/calculator.js"></script>
     <meta charset="UTF-8">
     <title>Awesome Calculator</title>
 </head>
-
+<body>
 <div class="container" style="padding-top: 50px">
     <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4 well">
+        <div id="calculator" class="col-sm-4 well">
             <p id="header">Calculator</p>
             <div class="row">
                 <div class="col-sm-1"></div>
-                <div class="col-sm-10 well">
+                <div id="screen" class="col-sm-10 well">
                     <p id="value" class="output">0</p>
                     <p id="equation" class="output extra-padding">0</p>
                 </div>
@@ -34,7 +35,7 @@
                     <button id="3">3</button>
                 </div>
                 <div id="divAdd">
-                    <button id="plus" class="btn-info">+</button>
+                    <button id="plus" class="button-operand">+</button>
                 </div>
             </div>
             <div class="row">
@@ -48,7 +49,7 @@
                     <button id="6">6</button>
                 </div>
                 <div id="divSub">
-                    <button id="minus" class="btn-info">-</button>
+                    <button id="minus" class="button-operand">-</button>
                 </div>
             </div>
             <div class="row">
@@ -62,7 +63,7 @@
                     <button id="9">9</button>
                 </div>
                 <div id="divMult">
-                    <button id="multiply" class="btn-info">*</button>
+                    <button id="multiply" class="button-operand">*</button>
                 </div>
             </div>
             <div class="row">
@@ -73,16 +74,16 @@
                     <button id="point">.</button>
                 </div>
                 <div id="divC">
-                    <button id="clear" class="btn-danger">a/c</button>
+                    <button id="clear" class="button-clear">a/c</button>
                 </div>
                 <div id="divDivide">
-                    <button id="divide" class="btn-info">/</button>
+                    <button id="divide" class="button-operand">/</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-12">
-                    <button id="equalsButton" class="btn-block btn-success">=</button>
+                    <button id="equalsButton" class="btn-block button-equal">=</button>
                 </div>
                 <div class="col-sm-1"></div>
             </div>
@@ -90,4 +91,5 @@
         <div class="col-sm-4"></div>
     </div>
 </div>
+</body>
 </html>
